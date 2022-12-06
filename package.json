@@ -11,7 +11,7 @@
   },
   "scripts": {
     "dev": "npx eslint ./src --fix && vite",
-    "build": "rimraf ./dist && npx eslint ./src --fix && vite build",
+    "build": "rimraf ./dist && npx eslint ./src --fix && tsc && vite build",
     "preview": "npx eslint ./src --fix && vite preview",
     "lint": "npx eslint ./src",
     "format": "npx eslint ./src --fix",
