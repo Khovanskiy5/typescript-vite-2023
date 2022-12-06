@@ -1,12 +1,12 @@
 {
-  "ignores": ["./dist"],
   "parser": "@typescript-eslint/parser",
   "extends": [
     "plugin:@typescript-eslint/recommended"
   ],
   "parserOptions": {
     "ecmaVersion": "latest",
-    "sourceType": "module"
+    "sourceType": "module",
+    "ignores": ["./dist"]
   },
   "rules": {}
 }
