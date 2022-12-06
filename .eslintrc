@@ -6,7 +6,11 @@
   "parserOptions": {
     "ecmaVersion": "latest",
     "sourceType": "module",
-    "ignores": ["./dist"]
+    "ignores": [
+      "./dist"
+    ]
   },
-  "rules": {}
+  "rules": {
+    "@typescript-eslint/no-non-null-assertion": "off"
+  }
 }
