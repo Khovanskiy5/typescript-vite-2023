@@ -1,0 +1,32 @@
+{
+  "name": "typescript",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "main": "index.js",
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  },
+  "scripts": {
+    "dev": "npx eslint ./src --fix && vite",
+    "build": "rimraf ./dist && npx eslint ./src --fix && vite build",
+    "preview": "npx eslint ./src --fix && vite preview",
+    "lint": "npx eslint ./src",
+    "format": "npx eslint ./src --fix",
+    "clear": "rimraf ./dist"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^4.9.3",
+    "vite": "^3.2.3",
+    "@types/node": "^18.11.10",
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "eslint": "^8.29.0",
+    "husky": "^8.0.2",
+    "prettier": "^2.8.0",
+    "rimraf": "^3.0.2"
+  }
+}
