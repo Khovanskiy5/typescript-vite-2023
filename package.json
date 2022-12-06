@@ -17,16 +17,16 @@
     "format": "npx eslint ./src --fix",
     "clear": "rimraf ./dist"
   },
-  "dependencies": {},
   "devDependencies": {
-    "typescript": "^4.9.3",
-    "vite": "^3.2.3",
     "@types/node": "^18.11.10",
     "@typescript-eslint/eslint-plugin": "^5.45.0",
     "@typescript-eslint/parser": "^5.45.0",
     "eslint": "^8.29.0",
     "husky": "^8.0.2",
     "prettier": "^2.8.0",
-    "rimraf": "^3.0.2"
+    "rimraf": "^3.0.2",
+    "sass": "^1.56.1",
+    "typescript": "^4.9.3",
+    "vite": "^3.2.3"
   }
 }
