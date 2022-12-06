@@ -1,54 +1,23 @@
+import './style.css'
+import typescriptLogo from './typescript.svg'
+import { setupCounter } from './counter'
 
-/**
- * Класс Одиночка предоставляет метод getInstance, который позволяет клиентам
- * получить доступ к уникальному экземпляру одиночки.
- */
- export class Singleton {
-    private static instance: Singleton;
+document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
+  <div>
+    <a href="https://vitejs.dev" target="_blank">
+      <img src="/src/vite.svg" class="logo" alt="Vite logo" />
+    </a>
+    <a href="https://www.typescriptlang.org/" target="_blank">
+      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
+    </a>
+    <h1>Vite + TypeScript</h1>
+    <div class="card">
+      <button id="counter" type="button"></button>
+    </div>
+    <p class="read-the-docs">
+      Click on the Vite and TypeScript logos to learn more
+    </p>
+  </div>
+`
 
-    /**
-     * Конструктор Одиночки всегда должен быть скрытым, чтобы предотвратить
-     * создание объекта через оператор new.
-     */
-    private constructor() { 
-        return Singleton.instance;
-    }
-
-    /**
-     * Статический метод, управляющий доступом к экземпляру одиночки.
-     *
-     * Эта реализация позволяет вам расширять класс Одиночки, сохраняя повсюду
-     * только один экземпляр каждого подкласса.
-     */
-    public static getInstance(): Singleton {
-        if (!Singleton.instance) {
-            Singleton.instance = new Singleton();
-        }
-
-        return Singleton.instance;
-    }
-
-    /**
-     * Наконец, любой одиночка должен содержать некоторую бизнес-логику, которая
-     * может быть выполнена на его экземпляре.
-     */
-    public someBusinessLogic() {
-        // ...
-    }
-}
-
-/**
- * Клиентский код.
- */
-function clientCode() {
-    const s1 = Singleton.getInstance();
-    const s2 = Singleton.getInstance();
-
-    if (s1 === s2) {
-        console.log('Singleton works, both variables contain the same instance.');
-    } else {
-        console.log('Singleton failed, variables contain different instances.');
-    }
-}
-
-clientCode();
+setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
